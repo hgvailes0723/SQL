@@ -1,0 +1,17 @@
+CREATE TABLE shop (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, quantity INTEGER, category TEXT);
+INSERT INTO shop VALUES (1, "roses", 12.00,10, "flowers");
+INSERT INTO shop VALUES (2, "daisy", 5.00, 21, "flowers");
+INSERT INTO shop VALUES (3, "tomatoes", 8.99, 14, "vegetables");
+INSERT INTO shop VALUES (4, "squash", 4.99, 16, "vegetables");
+INSERT INTO shop VALUES (5, "pears", 5.99, 23, "fruit");
+INSERT INTO shop VALUES (6, "apples", 3.99, 34, "fruit");
+INSERT INTO shop VALUES (7, "orchid", 13.99, 9, "flowers");
+INSERT INTO shop VALUES (8, "pumpkin", 2.99, 24, "vegetables");
+INSERT INTO shop VALUES (9, "strawberries", 4.99, 30, "fruits");
+INSERT INTO shop VALUES (10, "lettuce", 3.99, 22, "vegetables");
+INSERT INTO shop VALUES (11, "pine", 100.00, 30, "trees");
+INSERT INTO shop VALUES (12, "spruce", 120.00, 24, "trees");
+INSERT INTO shop VALUES (13, "avocado", 5.99, 20, "vegetables");
+INSERT INTO shop VALUES (14, "cucumbers", 2.99, 35, "vegetables");
+INSERT INTO shop VALUES (15, "bananas", 3.99, 40, "fruits");
+SELECT * FROM shop WHERE quantity >1 ORDER BY price;
