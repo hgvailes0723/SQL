@@ -1,0 +1,58 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE singers (id INTEGER PRIMARY KEY, name TEXT, born TEXT, status TEXT);
+
+INSERT INTO singers VALUES (1, "taylor swift", "Pennsylvania", "single");
+
+INSERT INTO singers VALUES (2, "kelly clarkson", "Texas", "divorced");
+
+INSERT INTO singers VALUES (3, "bruno mars", "Hawaii", "single");
+
+INSERT INTO singers VALUES (4, "luke bryan", "Georgia", "married");
+
+INSERT INTO singers VALUES (5, "whitney houston", "New Jersey", "divorced");
+
+INSERT INTO singers VALUES (6, "kelsea ballerini", "Tennessee", "divorced");
+
+INSERT INTO singers VALUES (7, "sabrina carpenter", "Pennsylvania", "single");
+
+INSERT INTO singers VALUES (8, "olivia rodrigo", "California", "single");
+
+INSERT INTO singers VALUES (9, "julia michaels", "Iowa", "single");
+
+INSERT INTO singers VALUES (10, "ariana grande", "Florida", "married");
+
+SELECT * FROM singers;
+
+
+CREATE TABLE awards (name TEXT PRIMARY KEY, singer_id INTEGER, Grammy INTEGER, age INTEGER);
+
+INSERT INTO awards VALUES ("taylor swift", 1, 12, 33);
+
+INSERT INTO awards VALUES ("kelly clarkson", 2, 3, 40);
+
+INSERT INTO awards VALUES ("bruno mars", 3, 12, 37);
+
+INSERT INTO awards VALUES ("luke bryan", 4, 0, 46);
+
+INSERT INTO awards VALUES ("whitney houston", 5, 6, 48);
+
+INSERT INTO awards VALUES ("kelsea ballerini", 6, 0, 29);
+
+INSERT INTO awards VALUES ("sabrina carpenter", 7, 0, 23);
+
+INSERT INTO awards VALUES ("olivia rodrigo", 8, 3, 20);
+
+INSERT INTO awards VALUES ("julia michaels", 9, 1, 29);
+
+INSERT INTO awards VALUES ("ariana grande", 10, 2, 29);
+
+SELECT singers.name, awards.singer_id 
+FROM singers 
+JOIN awards 
+ON singers.id = awards.singer_id;
+
+SELECT singers.name, singers.born, awards.age 
+FROM  singers
+LEFT JOIN awards
+ON singers.id = awards.singer_id; 
