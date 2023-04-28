@@ -20,7 +20,39 @@ WHERE i.BillingCountry = "Brazil";
 
 */ Show the Employees who are Sales Agents. */
 
-SELECT * FROM employees WHERE title = 'Sales Support Agent';
+SELECT * FROM employees 
+WHERE title = 'Sales Support Agent';
 
 */ Find a unique/distinct list of billing countries from the Invoice table */
+
+SELECT DISTINCT BillingCountry FROM chinook.invoices;
+
+*/ Provide a query that shows the invoices associated with each sales agent. 
+The resulting table should include the Sales Agent's full name. */
+
+SELECT e.firstname, e.lastname, i.InvoiceId
+FROM employees e
+JOIN customers c ON c.supportrepid = e.employeeId
+JOIN invoices i ON i.customerId = c.customerId;
+
+*/ Show the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers. */
+
+SELECT e.firstname, e.lastname, c.firstname, c.lastname, c.country, i.total
+FROM chinook.invoices i
+JOIN chinook.customers c ON i.customerId = c.customerId
+JOIN chinook.employees e ON e.employeeId = c.supportrepid;
+
+*/ How many Invoices were there in 2009? */
+
+SELECT COUNT(*) FROM invoices WHERE InvoiceDate LIKE '2009%';
+
+*/ What are the total sales for 2009? */
+
+SELECT SUM(total) FROM invoices WHERE InvoiceDate LIKE '2009%';
+
+*/ 
+
+
+
+
 
